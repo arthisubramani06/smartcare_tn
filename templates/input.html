@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %}Health Scan - Smart Care TN{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="form-section">
+        <h2 data-lang="health-scan-title">Community Health Scan</h2>
+        <p class="form-intro" data-lang="health-scan-intro">
+            Fill in the details below for an accurate risk assessment
+        </p>
+        
+        <form method="POST" action="/analyse" class="health-form">
+            <!-- Basic Information -->
+            <div class="form-group">
+                <label for="village" data-lang="village-label">Village Name *</label>
+                <input type="text" id="village" name="village" required 
+                       placeholder="Enter your village name" data-lang-placeholder="village-placeholder">
+            </div>
+            
+            <div class="form-group">
+                <label for="district" data-lang="district-label">District</label>
+                <input type="text" id="district" name="district" 
+                       placeholder="Enter your district" data-lang-placeholder="district-placeholder">
+            </div>
+            
+            <div class="form-group">
+                <label for="age" data-lang="age-label">Age Group *</label>
+                <select id="age" name="age" required>
+                    <option value="adult" data-lang="age-adult">Adult (18-60)</option>
+                    <option value="elderly" data-lang="age-elderly">Elderly (60+)</option>
+                    <option value="child" data-lang="age-child">Child (0-18)</option>
+                </select>
+            </div>
+            
+            <!-- Environmental Factors -->
+            <div class="form-group">
+                <label for="season" data-lang="season-label">Current Season *</label>
+                <select id="season" name="season" required>
+                    <option value="summer" data-lang="season-summer">Summer ☀️</option>
+                    <option value="monsoon" data-lang="season-monsoon">Monsoon 🌧️</option>
+                    <option value="winter" data-lang="season-winter">Winter 🌬️</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="water" data-lang="water-label">Primary Water Source *</label>
+                <select id="water" name="water" required>
+                    <option value="pipe" data-lang="water-pipe">Piped Supply 🚰</option>
+                    <option value="well" data-lang="water-well">Open Well 🪣</option>
+                    <option value="borewell" data-lang="water-borewell">Borewell ⛏️</option>
+                    <option value="river" data-lang="water-river">River/Canal 🌊</option>
+                    <option value="tank" data-lang="water-tank">Village Tank 🏞️</option>
+                </select>
+            </div>
+            
+            <!-- Community Data -->
+            <div class="form-group">
+                <label for="cases" data-lang="cases-label">Similar Cases in Village *</label>
+                <select id="cases" name="cases" required>
+                    <option value="1" data-lang="cases-1">Only me</option>
+                    <option value="2" data-lang="cases-2">2–5 cases</option>
+                    <option value="3" data-lang="cases-3">5–15 cases</option>
+                    <option value="4" data-lang="cases-4">15+ cases</option>
+                </select>
+            </div>
+            
+            <!-- Symptoms Checklist -->
+            <div class="form-group">
+                <label data-lang="symptoms-label">Select All Symptoms You Have *</label>
+                <div class="symptoms-grid">
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="fever">
+                        <span data-lang="symptom-fever">Fever</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="high_fever">
+                        <span data-lang="symptom-high-fever">High Fever (103°F+)</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="body_pain">
+                        <span data-lang="symptom-body-pain">Body Pain</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="headache">
+                        <span data-lang="symptom-headache">Headache</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="rash">
+                        <span data-lang="symptom-rash">Skin Rash</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="chills">
+                        <span data-lang="symptom-chills">Chills</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="sweating">
+                        <span data-lang="symptom-sweating">Excessive Sweating</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="fatigue">
+                        <span data-lang="symptom-fatigue">Fatigue/Weakness</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="nausea">
+                        <span data-lang="symptom-nausea">Nausea</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="vomiting">
+                        <span data-lang="symptom-vomiting">Vomiting</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="cough">
+                        <span data-lang="symptom-cough">Cough</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="sore_throat">
+                        <span data-lang="symptom-sore-throat">Sore Throat</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="weight_loss">
+                        <span data-lang="symptom-weight-loss">Weight Loss</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="frequent_urination">
+                        <span data-lang="symptom-frequent-urination">Frequent Urination</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="blurred_vision">
+                        <span data-lang="symptom-blurred-vision">Blurred Vision</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="chest_pain">
+                        <span data-lang="symptom-chest-pain">Chest Pain</span>
+                    </label>
+                    <label class="symptom-checkbox">
+                        <input type="checkbox" name="symptoms" value="dizziness">
+                        <span data-lang="symptom-dizziness">Dizziness</span>
+                    </label>
+                </div>
+            </div>
+            
+            <input type="hidden" name="lang" id="lang-input" value="en">
+            
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary" data-lang="submit-scan">Analyze Risk</button>
+                <a href="/" class="btn btn-secondary" data-lang="cancel">Cancel</a>
+            </div>
+        </form>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Update hidden lang field when language changes
+    document.getElementById('lang-en').addEventListener('click', function() {
+        document.getElementById('lang-input').value = 'en';
+    });
+    document.getElementById('lang-ta').addEventListener('click', function() {
+        document.getElementById('lang-input').value = 'ta';
+    });
+</script>
+{% endblock %}

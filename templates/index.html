@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Smart Care TN - Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="hero">
+        <h2 class="hero-title" data-lang="welcome">Welcome to Smart Care TN</h2>
+        <p class="hero-subtitle" data-lang="tagline">
+            Early Disease Detection & Community Health Monitoring for Rural Tamil Nadu
+        </p>
+        <div class="hero-actions">
+            <a href="/input" class="btn btn-primary" data-lang="start-scan">Start Health Scan</a>
+            <a href="/phc" class="btn btn-secondary" data-lang="find-phc">Find Nearest PHC</a>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🩺</div>
+            <h3 data-lang="feature-1-title">Symptom Analysis</h3>
+            <p data-lang="feature-1-desc">
+                Quick and accurate disease risk assessment based on symptoms, environmental factors, and community data
+            </p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">🌍</div>
+            <h3 data-lang="feature-2-title">Community Monitoring</h3>
+            <p data-lang="feature-2-desc">
+                Track disease patterns in your village to detect potential outbreaks early
+            </p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">🏥</div>
+            <h3 data-lang="feature-3-title">PHC Locator</h3>
+            <p data-lang="feature-3-desc">
+                Find the nearest Primary Health Center with contact information and directions
+            </p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3 data-lang="feature-4-title">Bilingual Support</h3>
+            <p data-lang="feature-4-desc">
+                Available in both English and Tamil for easy accessibility
+            </p>
+        </div>
+    </section>
+    
+    <section class="info-banner">
+        <h3 data-lang="important-note">Important Note</h3>
+        <p data-lang="disclaimer">
+            This tool is for preliminary assessment only. Always consult a doctor for proper diagnosis and treatment.
+            In case of emergency, call 108 immediately.
+        </p>
+    </section>
+</div>
+{% endblock %}

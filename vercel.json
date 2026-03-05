@@ -4,5 +4,11 @@
       "src":"/(.*)",
       "dest":"api/index.py"
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/_vercel/insights/(.*)",
+      "destination": "/_vercel/insights/$1"
+    }
   ]
 }
