@@ -1,0 +1,52 @@
+╔══════════════════════════════════════════════╗
+║         SMART CARE TN — HOW TO RUN          ║
+╚══════════════════════════════════════════════╝
+
+STEP 1 — Install Python
+  • Go to: https://python.org/downloads
+  • Download Python 3 and install it
+  • ✅ IMPORTANT: Tick "Add Python to PATH" during install
+
+STEP 2 — Install Flask
+  Open Command Prompt and run:
+    pip install flask
+
+STEP 3 — Run the app
+  In Command Prompt, navigate to this folder:
+    cd path\to\smartcare_tn
+
+  Then run:
+    python app.py
+
+STEP 4 — Open in browser
+  Go to: http://localhost:5000
+
+──────────────────────────────────────────────
+
+📱 TO USE ON YOUR PHONE (same WiFi):
+
+1. Find your PC IP address:
+   Press Win+R → type cmd → type: ipconfig
+   Look for IPv4 Address (e.g. 192.168.1.5)
+
+2. On your phone browser open:
+   http://192.168.1.5:5000
+
+──────────────────────────────────────────────
+
+🌐 LANGUAGE:
+  Use the EN | த toggle in the top bar
+  to switch between English and Tamil.
+
+──────────────────────────────────────────────
+
+PROJECT STRUCTURE:
+  app.py                ← Flask backend
+  templates/
+    index.html          ← Home page
+    input.html          ← Scan / input form
+    results.html        ← Risk result page
+    phc.html            ← PHC finder & info
+  static/
+    style.css           ← All styles
+    lang.js             ← Tamil/English translations
