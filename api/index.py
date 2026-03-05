@@ -228,6 +228,7 @@ def results():
 @app.route('/phc')
 def phc():
     return render_template('phc.html')
+handler=app
 
 
 if __name__ == '__main__':
