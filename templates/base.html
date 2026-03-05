@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Smart Care TN{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <!-- Vercel Web Analytics -->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🏥 Smart Care TN</h1>
+            <div class="lang-toggle">
+                <button id="lang-en" class="active">EN</button>
+                <span>|</span>
+                <button id="lang-ta">த</button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Smart Care TN - Community Health Initiative</p>
+        </div>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='lang.js') }}"></script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

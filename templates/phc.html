@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+
+{% block title %}PHC Locator - Smart Care TN{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="phc-section">
+        <h2 data-lang="phc-title">Primary Health Center (PHC) Locator</h2>
+        <p class="phc-intro" data-lang="phc-intro">
+            Find the nearest Primary Health Center in your area
+        </p>
+        
+        <!-- Search Form -->
+        <div class="phc-search">
+            <h3 data-lang="phc-search-title">Search by Location</h3>
+            <form class="phc-search-form" onsubmit="event.preventDefault(); searchPHC();">
+                <div class="form-group">
+                    <label for="search-district" data-lang="district-label">District</label>
+                    <input type="text" id="search-district" placeholder="Enter district name" 
+                           data-lang-placeholder="district-placeholder">
+                </div>
+                <div class="form-group">
+                    <label for="search-village" data-lang="village-label">Village/Taluk</label>
+                    <input type="text" id="search-village" placeholder="Enter village or taluk" 
+                           data-lang-placeholder="village-placeholder">
+                </div>
+                <button type="submit" class="btn btn-primary" data-lang="search-phc">Search PHC</button>
+            </form>
+        </div>
+        
+        <!-- Sample PHC List -->
+        <div class="phc-list">
+            <h3 data-lang="phc-list-title">Common PHC Contacts</h3>
+            
+            <div class="phc-card">
+                <div class="phc-header">
+                    <h4 class="phc-name">Dharapuram PHC</h4>
+                    <span class="phc-badge">Tirupur District</span>
+                </div>
+                <div class="phc-details">
+                    <div class="phc-info">
+                        <span class="info-icon">📍</span>
+                        <span>Dharapuram, Tirupur - 638656</span>
+                    </div>
+                    <div class="phc-info">
+                        <span class="info-icon">📞</span>
+                        <a href="tel:04258222345">04258-222345</a>
+                    </div>
+                    <div class="phc-info">
+                        <span class="info-icon">⏰</span>
+                        <span data-lang="phc-hours">Open 24/7</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="phc-card">
+                <div class="phc-header">
+                    <h4 class="phc-name">Pollachi PHC</h4>
+                    <span class="phc-badge">Coimbatore District</span>
+                </div>
+                <div class="phc-details">
+                    <div class="phc-info">
+                        <span class="info-icon">📍</span>
+                        <span>Pollachi, Coimbatore - 642001</span>
+                    </div>
+                    <div class="phc-info">
+                        <span class="info-icon">📞</span>
+                        <a href="tel:04259222123">04259-222123</a>
+                    </div>
+                    <div class="phc-info">
+                        <span class="info-icon">⏰</span>
+                        <span data-lang="phc-hours">Open 24/7</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="phc-card">
+                <div class="phc-header">
+                    <h4 class="phc-name">Palani PHC</h4>
+                    <span class="phc-badge">Dindigul District</span>
+                </div>
+                <div class="phc-details">
+                    <div class="phc-info">
+                        <span class="info-icon">📍</span>
+                        <span>Palani, Dindigul - 624601</span>
+                    </div>
+                    <div class="phc-info">
+                        <span class="info-icon">📞</span>
+                        <a href="tel:04545222456">04545-222456</a>
+                    </div>
+                    <div class="phc-info">
+                        <span class="info-icon">⏰</span>
+                        <span data-lang="phc-hours">Open 24/7</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="phc-card">
+                <div class="phc-header">
+                    <h4 class="phc-name">Madurai Government Hospital PHC</h4>
+                    <span class="phc-badge">Madurai District</span>
+                </div>
+                <div class="phc-details">
+                    <div class="phc-info">
+                        <span class="info-icon">📍</span>
+                        <span>Madurai - 625020</span>
+                    </div>
+                    <div class="phc-info">
+                        <span class="info-icon">📞</span>
+                        <a href="tel:04522530530">0452-2530530</a>
+                    </div>
+                    <div class="phc-info">
+                        <span class="info-icon">⏰</span>
+                        <span data-lang="phc-hours">Open 24/7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Important Contacts -->
+        <div class="important-contacts">
+            <h3 data-lang="important-contacts-title">Important Health Contacts</h3>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">🚑</div>
+                    <h4 data-lang="emergency-ambulance">Emergency Ambulance</h4>
+                    <a href="tel:108" class="contact-number">108</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">👨‍⚕️</div>
+                    <h4 data-lang="health-helpline">Health Helpline</h4>
+                    <a href="tel:104" class="contact-number">104</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">🩺</div>
+                    <h4 data-lang="tn-health-dept">TN Health Department</h4>
+                    <a href="tel:04425677303" class="contact-number">044-25677303</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">🦟</div>
+                    <h4 data-lang="vector-control">Vector Control</h4>
+                    <a href="tel:04425677290" class="contact-number">044-25677290</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Information Section -->
+        <div class="phc-info-section">
+            <h3 data-lang="phc-services-title">Services Available at PHC</h3>
+            <ul class="services-list">
+                <li data-lang="service-1">Free consultation with doctors</li>
+                <li data-lang="service-2">Basic diagnostic tests (blood, urine)</li>
+                <li data-lang="service-3">Free essential medicines</li>
+                <li data-lang="service-4">Vaccination programs</li>
+                <li data-lang="service-5">Maternal and child health services</li>
+                <li data-lang="service-6">Family planning services</li>
+                <li data-lang="service-7">Disease surveillance and outbreak management</li>
+                <li data-lang="service-8">Health education and awareness programs</li>
+            </ul>
+        </div>
+        
+        <div class="phc-actions">
+            <a href="/input" class="btn btn-primary" data-lang="health-scan">Start Health Scan</a>
+            <a href="/" class="btn btn-secondary" data-lang="home">Home</a>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    function searchPHC() {
+        const district = document.getElementById('search-district').value;
+        const village = document.getElementById('search-village').value;
+        
+        if (district || village) {
+            alert('PHC search for: ' + district + ' - ' + village + '\n\nThis feature will be connected to the PHC database in the next update. For now, please check the list below or call 104 for assistance.');
+        } else {
+            alert('Please enter district or village name to search.');
+        }
+    }
+</script>
+{% endblock %}
